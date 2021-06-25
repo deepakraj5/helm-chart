@@ -1,0 +1,14 @@
+deployment:
+  name: mongo-express
+  replicas: 2
+  image: mongo-express
+  container:
+    port: 8081
+
+
+service:
+  name: mongo-express
+  targetPort: 8081
+  port: 80
+  selector:
+    name: mongo-express
