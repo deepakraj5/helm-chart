@@ -12,3 +12,11 @@ service:
   port: 80
   selector:
     name: mongo-express
+
+
+configmap:
+  name: mongo-express-configmap
+  mongoexpress:
+    server: "mongodb"
+    username: "kannan"
+    password: "kannanpass"

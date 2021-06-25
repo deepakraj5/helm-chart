@@ -1,14 +1,21 @@
 deployment:
-  name: mongo-express
-  replicas: 2
-  image: mongo-express
+  name: mongodb
+  replicas: 1
+  image: mongo
   container:
-    port: 8081
+    port: 27017
 
 
 service:
-  name: mongo-express
-  targetPort: 8081
-  port: 80
+  name: mongodb
+  targetPort: 27017
+  port: 27017
   selector:
-    name: mongo-express
+    name: mongodb
+
+
+configmap:
+  name: mongodb-configmap
+  mongo:
+    username: "kannan"
+    password: "kannanpass"
